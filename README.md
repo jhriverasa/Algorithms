@@ -1,2 +1,2 @@
-# Algorithms-
+# Algorithms
 Stuff for algorithms course.
