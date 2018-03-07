@@ -1,0 +1,12 @@
+Using n= 30
+took 446701ns.
+took 501083ns.
+took 445865ns.
+took 507128ns.
+took 443670ns.
+took 445607ns.
+took 444758ns.
+took 177151ns.
+took 250468ns.
+took 175651ns.
+---------
