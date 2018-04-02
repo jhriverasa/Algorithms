@@ -1,6 +1,6 @@
 
 import itertools 
-import random
+from random import randint
 import sys
 
 #Sort an Array and return number total of comparisons and swaps.
@@ -41,6 +41,24 @@ def GetAverageStats(Array):
 	r.append(avgswaps)
 	return r
 
+#use given list of permutations
+def ModGetAverageStats(Array):
+
+	n=len(Array)
+	avgcomparisons=0
+	avgswaps=0
+	for i in range(n):
+		lst= list(Array[i])
+		stats=BubbleSort( lst)
+		avgcomparisons += stats[0]
+		avgswaps += stats[1]
+	avgcomparisons /= float(n)
+	avgswaps /= float(n)
+	r=[]
+	r.append(avgcomparisons)
+	r.append(avgswaps)
+	return r
+
 
 ######MAIN#####
 
@@ -62,3 +80,22 @@ for i in range(n):
 	print "Average swaps:"
 	print k[1]
 	print "--------------------"
+	if(i==n-1):
+		perm = list(itertools.permutations(l))
+		nperm = len(perm)
+		randomperm=[]
+		rlen = randint(1,nperm)
+		print str(rlen) + " elements randomly picked."
+		for j in range(rlen):
+			randindex=randint(0,nperm-1)
+			randomperm.append(list( perm[randindex] ) )
+		k= ModGetAverageStats(randomperm)
+		print ("Random sample of Permutations with  n="+str(i+1))
+		print "Average Total instructions:"
+		print (k[0]+k[1])																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			
+		print "Average comparisons:"
+		print k[0]
+		print "Average swaps:"
+		print k[1]
+		print "--------------------"
+
